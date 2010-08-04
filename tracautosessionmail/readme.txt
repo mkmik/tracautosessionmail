@@ -1,4 +1,4 @@
-= TracTicketValidatorPlugin =
+= TracAutoSessionMailPlugin =
 
 == description ==
  * support validate anonymous to input valid email address
@@ -8,7 +8,7 @@
 = Install =
  You can install this software as normal Trac plugin.
 
- 1. Uninstall TracTicketTemplate if you have installed before.
+ 1. Uninstall TracAutoSessionMailPlugin if you have installed before.
 
  2. Change to the directory containning setup.py.
 
@@ -26,13 +26,6 @@ cp dist/*.egg /srv/trac/env/plugins
   {{{
 [components]
 tractracautosessionmail.* = enabled
-
-[tracautosessionmail]
-validate_author = true
-validate_author.tip = Please fill your valid email address
-validates = summary, comment
-comment.rule = .*
-comment.tip = Please input comment
 }}}
 
  6. If you are installing this plugin first time, you can copy description.tmpl to your/trac/environment/templates to utilize some default ticket templates.

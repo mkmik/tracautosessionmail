@@ -1,19 +1,19 @@
 from setuptools import find_packages, setup
 
 setup(
-    name = 'TracTicketValidator',
+    name = 'TracAutoSessionMail',
     version = '0.1',
     packages = ['tracautosessionmail'],
     package_data = { 'tracautosessionmail': [ '*.txt' ] },
 
-    author = "Richard Liao",
-    author_email = 'richard.liao.i@gmail.com',
-    maintainer = 'Richard Liao',
-    maintainer_email = "richard.liao.i@gmail.com",
-    description = "Ticket validator plugin for Trac.",
+    author = "Marko Mikulicic",
+    author_email = 'marko.mikulicic@isti.cnr.it',
+    maintainer = 'Marko Mikulicic',
+    maintainer_email = "marko.mikulicic@isti.cnr.it",
+    description = "Automatic email into session after ticket creation for anonymous users.",
     license = "BSD",
-    keywords = "trac ticket validator",
-    url = "http://trac-hacks.org/wiki/TracTicketValidatorPlugin",
+    keywords = "automatic email session",
+    url = "http://trac-hacks.org/wiki/TracAutoSessionMail",
     classifiers = [
         'Framework :: Trac',
     ],
