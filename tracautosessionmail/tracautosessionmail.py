@@ -20,10 +20,10 @@ class TicketAutoSessionMail(Component):
     """ If an anonymous user creates a new ticket with a valid email address, put this address in the user's session
     """
     
-    implements(ITicketChangeListener)
+    implements(ITicketManipulator)
 
     # ITicketChangeListener methods
-    def ticket_created(ticket):
+    def validate_ticket(self, req, ticket):
         """Called when a ticket is created."""
 
         # is logged in?
@@ -35,8 +35,15 @@ class TicketAutoSessionMail(Component):
         # get author
         author = req.args.get("author")
         reporter = ticket.values.get("reporter")
-        
-        self.env.log.info("WOWOW")
+
+        if isLoggedIn == False and (author == reporter) and self._isValidateEmail(author):
+           self.env.log.info("perhaps saving author email into session %s" % (author))
+           if not req.session.get('email'):
+              self.env.log.info("The user doesn't have already the email in the session, setting it")
+              req.session['email'] = author
+
+
+        return []
                 
     def _isValidateEmail(self, email):
         if not email:
