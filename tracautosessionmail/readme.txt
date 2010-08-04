@@ -25,9 +25,9 @@ cp dist/*.egg /srv/trac/env/plugins
  5. Config trac.ini:
   {{{
 [components]
-tracticketvalidator.* = enabled
+tractracautosessionmail.* = enabled
 
-[ticketvalidator]
+[tracautosessionmail]
 validate_author = true
 validate_author.tip = Please fill your valid email address
 validates = summary, comment
